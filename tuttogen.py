@@ -37,7 +37,7 @@ _/  |_ __ ___/  |__/  |_    ____
 	else:
 		print(ip)
 	try:
-		ip = os.popen('ip addr show eth0').read().split("inet ")[1].split("/")[0]
+		ip = os.popen('ip addr show eth0 2>&1 /dev/null').read().split("inet ")[1].split("/")[0]
 		print("[3] eth0: ",end=" ")
 		iplist.append(ip)
 	except IndexError:
